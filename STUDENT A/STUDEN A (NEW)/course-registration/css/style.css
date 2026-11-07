@@ -1,0 +1,240 @@
+/* Dashboard and course pages - restored blue university portal appearance */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 8px;
+    background: #879faf;
+    color: #111;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: min(1668px, 100%);
+    min-height: calc(100vh - 16px);
+    margin: 0 auto;
+    background: #f8f9fa;
+    border: 1px solid #c8d5dc;
+}
+
+/* University banner */
+.banner {
+    min-height: 198px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 28px 14%;
+    color: white;
+    background: linear-gradient(110deg, #0864ad, #31b5e5);
+    border: 1px solid #b8d6e5;
+}
+
+.university-logo {
+    padding: 12px 18px;
+    border: 3px solid white;
+    transform: skew(-12deg);
+    font-size: 27px;
+    font-weight: bold;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.banner-title { text-align: center; }
+.banner-title h1,
+.banner-title h2 {
+    margin: 0 0 5px;
+    font-size: clamp(27px, 3vw, 48px);
+    letter-spacing: 3px;
+    color: white;
+}
+.banner-title p {
+    margin: 0;
+    color: #d8eaff;
+    font-size: clamp(18px, 2vw, 31px);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.semester, .semester-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 12px 22px;
+    color: #ffff00;
+    background: #153c55;
+    border-radius: 0 18px 0 0;
+    font-size: 19px;
+}
+
+/* Navigation */
+.navbar {
+    min-height: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px 12px;
+    background: linear-gradient(#79c3d1, #086a80);
+    border: 1px solid #6aa5b4;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 10px 12px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 15px;
+}
+.nav-button:hover,
+.nav-button.active {
+    background: rgba(255,255,255,.2);
+    outline: 1px solid rgba(255,255,255,.45);
+}
+
+.nav-right, .nav-welcome, .welcome-user {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Main layout and sidebar */
+.main-layout {
+    display: grid;
+    grid-template-columns: 274px minmax(0, 1fr);
+    gap: 15px;
+    padding: 13px;
+    align-items: start;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.side-box {
+    padding: 13px;
+    background: #e0e8f0;
+    border: 1px solid #c3d0dd;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.side-box h2,
+.side-box h3 {
+    margin: 0 0 10px;
+    color: #547b9e;
+    font-size: 17px;
+}
+
+.side-box p { margin: 10px 0; }
+
+.student-box { min-height: 258px; }
+.student-name {
+    margin-top: 22px;
+    text-align: center;
+    font-weight: bold;
+}
+.student-id {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.logout-button {
+    display: block;
+    width: 136px;
+    margin: 37px 0 0 auto;
+    padding: 8px;
+    color: #d94d25;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(#c8edf7, #80bfd2);
+    border: 1px solid #a5cbd5;
+    border-radius: 6px;
+}
+.logout-button:hover { filter: brightness(.96); }
+
+.content { min-width: 0; }
+.announcement {
+    min-height: 62px;
+    margin: 0;
+    padding: 16px;
+    border: 1px solid #aaa;
+}
+.announcement legend {
+    padding: 0 5px;
+    color: orangered;
+    font-size: 18px;
+}
+.announcement p {
+    margin: 0;
+    color: orangered;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Shared styles for course and information pages */
+.page-content, .content-page { padding: 25px; }
+.page-content h2, .content-page h2 {
+    margin: 0 0 20px;
+    color: #426e91;
+}
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+.course-card, .info-card {
+    padding: 20px;
+    background: #e8eef5;
+    border: 1px solid #c5d2df;
+    border-radius: 8px;
+}
+.course-card h3 { margin: 0 0 13px; color: #426e91; }
+.course-card p, .info-card p { line-height: 1.5; }
+
+button, .button, .register-button {
+    cursor: pointer;
+}
+.register-button, .course-card button, .page-content button {
+    padding: 10px 16px;
+    color: white;
+    font-weight: bold;
+    background: #1684a0;
+    border: 0;
+    border-radius: 5px;
+}
+.register-button:hover, .course-card button:hover, .page-content button:hover {
+    background: #09677e;
+}
+
+@media (max-width: 900px) {
+    .banner { padding: 25px 6%; }
+    .navbar { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 650px) {
+    body { padding: 0; }
+    .banner {
+        min-height: 180px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 25px 15px 55px;
+    }
+    .banner-title h1, .banner-title h2 { letter-spacing: 1px; }
+    .main-layout { grid-template-columns: 1fr; }
+    .nav-left { flex-direction: column; align-items: stretch; width: 100%; }
+    .nav-button { display: block; }
+}

@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Be Vietnam Pro',sans-serif;
+}
+
+body{
+    background:#edf0f2;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+.login-container{
+
+    width:96%;
+    max-width:1500px;
+
+    height:88vh;
+    min-height:650px;
+
+    background:white;
+
+    display:grid;
+    grid-template-columns:38% 62%;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 12px 25px rgba(0,0,0,.18);
+}
+
+/* ===========================
+   LEFT SIDE
+=========================== */
+
+.login-left{
+
+    position:relative;
+
+    background:#ed2d38;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    padding-left:70px;
+}
+
+.tdtu-logo{
+    width:160px;
+    margin-bottom:40px;
+}
+
+.university-name{
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    margin-bottom:70px;
+}
+
+.left-title h1{
+
+    color:white;
+
+    font-size:clamp(34px,2.5vw,48px);
+
+    line-height:1.25;
+
+    font-weight:800;
+}
+
+.left-footer{
+
+    color:white;
+
+    margin-top:50px;
+
+    font-size:16px;
+
+    font-weight:500;
+}
+
+.circle-icon{
+
+    position:absolute;
+
+    right:-55px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:#ff1c29;
+
+    border:15px solid white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    font-size:40px;
+}
+
+/* ===========================
+   RIGHT SIDE
+=========================== */
+
+.login-right{
+
+    position:relative;
+
+    background:#f5f5f5;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.language{
+
+    position:absolute;
+
+    top:25px;
+    right:25px;
+
+    display:flex;
+
+    gap:10px;
+}
+
+.language button{
+
+    width:60px;
+    height:32px;
+
+    border:1px solid #d5d5d5;
+
+    border-radius:6px;
+
+    background:white;
+
+    cursor:pointer;
+
+    font-size:12px;
+
+    transition:.2s;
+}
+
+.language button:hover{
+    background:#f3f3f3;
+}
+
+.login-content{
+
+    width:430px;
+}
+
+.login-content h2{
+
+    font-size:42px;
+
+    color:#343434;
+
+    margin-bottom:16px;
+
+    font-weight:800;
+}
+
+.login-subtitle{
+
+    font-size:17px;
+
+    color:#555;
+
+    margin-bottom:30px;
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+.input-group{
+
+    position:relative;
+
+    margin-bottom:18px;
+}
+
+.input-icon{
+
+    position:absolute;
+
+    left:18px;
+    top:50%;
+
+    transform:translateY(-50%);
+}
+
+.input-group input{
+
+    width:100%;
+
+    height:65px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#edf1fd;
+
+    padding-left:55px;
+    padding-right:50px;
+
+    font-size:16px;
+}
+
+.input-group input:focus{
+
+    outline:none;
+
+    box-shadow:
+    0 0 0 2px rgba(237,45,56,.15);
+}
+
+.eye-button{
+
+    position:absolute;
+
+    right:15px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.login-button{
+
+    width:250px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#e35858;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.login-button:hover{
+
+    background:#d34141;
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+.login-note{
+
+    margin-top:25px;
+
+    font-size:15px;
+
+    color:#555;
+
+    line-height:1.5;
+}
+
+.error-message{
+
+    color:#d63031;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+}
+
+.login-content a{
+
+    color:#5f27cd;
+
+    text-decoration:none;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:900px){
+
+    .login-container{
+        grid-template-columns:1fr;
+    }
+
+    .circle-icon{
+        display:none;
+    }
+
+    .login-left{
+
+        text-align:center;
+
+        align-items:center;
+
+        padding:40px;
+    }
+
+    .login-content{
+
+        width:90%;
+        max-width:430px;
+    }
+}

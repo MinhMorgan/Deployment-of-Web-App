@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+body {
+    background: #edf0f2;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.signup-container {
+    width: 96%;
+    max-width: 1500px;
+    min-height: 650px;
+    height: 88vh;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 38% 62%;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, .18);
+}
+
+/* LEFT SIDE — matching login.css */
+.signup-left {
+    position: relative;
+    background: #ed2d38;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 55px 70px;
+}
+
+.university-name {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 70px;
+}
+
+.left-title h1 {
+    color: #fff;
+    font-size: clamp(34px, 2.5vw, 48px);
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.left-footer {
+    color: #fff;
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.circle-icon {
+    position: absolute;
+    right: -55px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #ff1c29;
+    border: 15px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 40px;
+}
+
+/* RIGHT SIDE — matching login.css */
+.signup-right {
+    position: relative;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 55px;
+}
+
+.signup-content {
+    width: 100%;
+    max-width: 500px;
+}
+
+.signup-content h2 {
+    font-size: 40px;
+    color: #343434;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.signup-subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 22px;
+    line-height: 1.5;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 13px;
+}
+
+.input-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 17px;
+    color: #666;
+    pointer-events: none;
+}
+
+.input-group input {
+    width: 100%;
+    height: 56px;
+    border: none;
+    border-radius: 14px;
+    background: #edf1fd;
+    padding: 0 18px 0 52px;
+    font-size: 15px;
+    color: #333;
+}
+
+.input-group input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(237, 45, 56, .15);
+}
+
+.signup-button {
+    width: 250px;
+    max-width: 100%;
+    height: 56px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 12px;
+    background: #e35858;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.signup-button:hover {
+    background: #d34141;
+}
+
+.account-link {
+    margin-top: 20px;
+    color: #555;
+    font-size: 14px;
+}
+
+.account-link a,
+.signup-content a {
+    color: #5f27cd;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.account-link a:hover,
+.signup-content a:hover {
+    text-decoration: underline;
+}
+
+.error-message,
+.success-message {
+    padding: 10px 13px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    font-size: 13px;
+}
+
+.error-message {
+    color: #b71c1c;
+    background: #ffebee;
+}
+
+.success-message {
+    color: #2e7d32;
+    background: #e8f5e9;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    body {
+        align-items: flex-start;
+    }
+
+    .signup-container {
+        height: auto;
+        min-height: 0;
+        grid-template-columns: 1fr;
+    }
+
+    .signup-left {
+        min-height: 260px;
+        padding: 35px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .university-name {
+        margin-bottom: 25px;
+    }
+
+    .left-footer {
+        margin-top: 20px;
+    }
+
+    .circle-icon {
+        display: none;
+    }
+
+    .signup-right {
+        padding: 35px 25px;
+    }
+
+    .signup-content {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-content h2 {
+        font-size: 32px;
+    }
+
+    .signup-left {
+        min-height: 220px;
+    }
+
+    .left-title h1 {
+        font-size: 32px;
+    }
+
+    .signup-button {
+        width: 100%;
+    }
+}
