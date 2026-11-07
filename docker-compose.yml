@@ -1,0 +1,53 @@
+services:
+  web:
+    build: .
+    container_name: tdtu_web
+    ports:
+      - "8080:80"
+    volumes:
+      - "./STUDENT A/STUDEN A (NEW)/course-registration:/var/www/html"
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: rootpassword
+      DB_NAME: midterm
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: mariadb:10.4
+    container_name: tdtu_db
+    command: --lower_case_table_names=1
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: midterm
+    volumes:
+      # Auto-import database dump on first startup
+      - "./STUDENT A/STUDEN A (NEW)/midterm.sql:/docker-entrypoint-initdb.d/init.sql:ro"
+      # Persist data across container restarts
+      - db_data:/var/lib/mysql
+    restart: unless-stopped
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: tdtu_phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: rootpassword
+    depends_on:
+      - db
+    restart: unless-stopped
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: tdtu_tunnel
+    restart: unless-stopped
+    command: tunnel run --token eyJhIjoiNTQ0ZTEzYzk2NDZiMWEyZjgxZDNiMDE4YTJjYjRjMDMiLCJ0IjoiNGQ0MDEyNWQtNTZlMy00ZGYzLTg2MWQtYTFiOGNhNjBmZDRlIiwicyI6IllXSXdZamhoTTJFdFl6UTVaUzAwWVdaaUxXSmpZek10WXpVelpXWXpZVGd4TnpJMSJ9
+    depends_on:
+      - web
+volumes:
+  db_data:
